@@ -9,6 +9,12 @@ class Users < ApplicationRecord
 
     after_initialize :ensure_session_token #callback whenever user is created or loaded from DB
     
+    def self.find_by_credentials(name, password)
+        @user = Users.find_by(name: name)
+        return nil unless @user
+        @user.is_password?(password) ? @user : nil
+    end
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
@@ -26,7 +32,7 @@ class Users < ApplicationRecord
        self.session_token ||= self.class.generate_session_token 
     end
 
-    def reset_session_token
+    def reset_session_token!
         self.session_token = self.class.generate_session_token
         # update DB with updated session token
         self.save!

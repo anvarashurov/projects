@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
     #is available on Views
     helper_method :current_user, :logged_in?
 
+    def require_current_user!
+        redirect_to new_session_url if current_user.nil?
+    end
+
     def current_user
+        return nil if session[:session_token].nil?
         @current_user ||= Users.find_by(session_token: session[:session_token])
     end
 
