@@ -9,7 +9,7 @@
 * Error (Incorrect username/password, username already exists, warn from submitting empty form, etc)
 
 ## Tech:
-* Ruby on Rails project
+* Ruby on Rails project (Ruby v 2.5.1)
 * Postgres for DB
 * Utilized Ruby's CSV Api to read data into Ruby model and persist it
 * Used Active Record within Rails framework to perform CRUD operations with data (DB)
