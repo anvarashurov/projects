@@ -1,5 +1,9 @@
 # Auth Project
 
+## Heroku Deployment Link 
+
+https://xc-project.herokuapp.com/
+
 ## Walkthrough
 
 * https://vimeo.com/701510267/8fb7f4659b
