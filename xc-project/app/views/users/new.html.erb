@@ -1,18 +1,37 @@
-<h1>Create User</h1>
+<div id="login-container">
+  <h1 id="login-intro">Sign Up</h1>
 
-<form action="/users" method="post">
+  <div class="error">
+    <% if flash[:errors] %>
+      <p>
+        <%= flash[:errors].join(", ") %></p>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <p><%= flash[:notice].join(" , ") %></p>
+    <% end %>
+  </div>
+
+<form action="/users" method="POST">
   <input name="_method" type="hidden" value="post">
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-
-  <label for="user_username">Username</label>
-  <input id="user_username" name="user[name]" type="text">
   
-  <br>
+  <div>
+    <label id="login-name" for="user_name">FullName</label>
+    <input id="login-input" type="text" name="user[name]" id="user_username">
+  </div>
 
-  <label for="user_password">Password</label>
-  <input id="user_password" name="user[password]" type="password">
-  
-  <br>
+  <div>
+    <label id="login-username" for="user_username">Username</label>
+    <input id="login-input" type="text" name="user[username]" id="user_username">
+  </div>
 
-  <input type="submit" value="Create User">
+  <div>
+    <label id="login-password" for="user_password">Password</label>
+    <input id="login-input" type="password" name="user[password]" id="user_password">
+  </div>
+
+  <div>
+    <input id="login-button" type="submit" value="SIGN UP">
+  </div>
 </form>

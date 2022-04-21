@@ -54,6 +54,8 @@ group :development do
   gem 'annotate'
   gem 'bcrypt'
   gem 'securerandom'
+  gem 'csv'
+  gem 'carrierwave'
 end
 
 group :test do

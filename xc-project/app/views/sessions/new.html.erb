@@ -1,29 +1,30 @@
-<h1>Log in!</h1>
+<div id="login-container">
+  <h1 id="login-intro">Log in</h1>
   
-  <% if !current_user.nil? %>
-    <ul> 
-      <% current_user.errors.full_messages.each do |msg| %>
-        <li> <%= msg %> </li>
-      <% end %>
-    </ul>    
-  <% end %>
-  
-<form action="/session" method="POST">
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>">
+  <div class="error">
+    <% if flash[:errors] %>
+      <p><%= flash[:errors].join(", ") %></p>
+    <% end %>
 
-  <label for="user_username">Username</label>
-  <input type="text" name="user[name]" id="user_username">
+    <% if flash[:notice] %>
+      <p><%= flash[:notice].join(", ") %></p>
+    <% end %>
+  </div>
+  <form action="/session/" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <br />
-
-  <label for="user_password">Password</label>
-  <input type="password" name="user[password]" id="user_password">
-
-  <br />
-
-  <input type="submit" value="Log in!">
-
-</form>
+    <div>
+      <label id="login-username" for="user_username">Username</label>
+      <input id="login-input" type="text" name="user[username]" id="user_username">
+    </div>
+   
+    <div>
+      <label id="login-password" for="user_password">Password</label>
+      <input id="login-input" type="password" name="user[password]" id="user_password">
+    </div>
+    
+    <div>
+      <input id="login-button" type="submit" value="LOG IN">
+    </div>
+  </form>
+</div>
