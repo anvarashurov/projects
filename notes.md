@@ -69,10 +69,10 @@ user.valid? (method from validation)
 
 user.save (passes now)
 
-#patch 
-#put
 
-why different? Why need both?
+
+
+
 
 rails s -> to start rails server
 
