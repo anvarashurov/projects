@@ -1,4 +1,18 @@
-# auth project
+# Auth Project
+
+## Features: 
+
+> Sign up
+> Login (CSV data is stored in DB view helper methods)
+> Logout
+> Prevent from visiting unintended routes (e.g. should not show login-form when logged-in)
+> Error (Incorrect username/password, username already exists, warn from submitting empty form, etc)
+
+## Tech:
+> Ruby on Rails project
+> Postgres for DB
+> Utilized Ruby's CSV Api to read data into Ruby model and persist it
+> Used Active Record within Rails framework to perform CRUD operations with data (DB)
 
 ![landing_page](https://user-images.githubusercontent.com/51003447/164459027-c599bab7-8ae4-4689-a5f8-5396e55cf515.png)
 ![errors_handling](https://user-images.githubusercontent.com/51003447/164459034-d15e5ad6-f658-41f3-885b-4f26b64b48da.png)
