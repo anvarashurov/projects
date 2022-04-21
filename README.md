@@ -2,11 +2,11 @@
 
 ## Features: 
 
-> Sign up
-> Login (CSV data is stored in DB view helper methods)
-> Logout
-> Prevent from visiting unintended routes (e.g. should not show login-form when logged-in)
-> Error (Incorrect username/password, username already exists, warn from submitting empty form, etc)
+* Sign up
+* Login (CSV data is stored in DB view helper methods)
+* Logout
+* Prevent from visiting unintended routes (e.g. should not show login-form when logged-in)
+* Error (Incorrect username/password, username already exists, warn from submitting empty form, etc)
 
 ## Tech:
 > Ruby on Rails project
