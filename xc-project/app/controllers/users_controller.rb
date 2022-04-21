@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save!
             login!(@user)
-            render :show
+            redirect_to root_url
         else 
             flash[:notice] = ["Username already exists"]
             redirect_to new_user_url
