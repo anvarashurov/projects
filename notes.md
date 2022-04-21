@@ -75,3 +75,12 @@ user.save (passes now)
 why different? Why need both?
 
 rails s -> to start rails server
+
+
+# PG Start Server
+
+pg_ctlcluster 12 main start
+
+Data dir:  /var/lib/postgresql/12/main 
+
+Log file:  /var/log/postgresql/postgresql-12-main.log        
