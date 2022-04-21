@@ -2,6 +2,7 @@ class Users < ApplicationRecord
 
     validates :name, presence: true
     validates :password, length: {minimum: 6, allow_nil: true}
+    validates :username, uniqueness: true
 
     attr_reader :password #defines a getter
     #attr_writer #defined a setter

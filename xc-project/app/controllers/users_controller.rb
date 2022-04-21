@@ -5,11 +5,13 @@ class UsersController < ApplicationController
     
     def create
         @user = Users.new(user_params)
-        if @user.save
+        if @user.valid?
+            @user.save!
             login!(@user)
             render :show
         else 
-            render :new
+            flash[:notice] = ["Username already exists"]
+            redirect_to new_user_url
         end
     end
 
@@ -30,14 +32,14 @@ class UsersController < ApplicationController
         render :show
     end
 
-    # def update
-    #     @user = Users.find(current_user.id)
-    #     if @user.update_attributes(user_params)
-    #         render "User data updated"
-    #     else
-    #         render "Issue updating user data"
-    #     end
-    # end
+    def update
+        @user = Users.find(current_user.id)
+        if @user.update_attributes(user_params)
+            render "User data updated"
+        else
+            render "Issue updating user data"
+        end
+    end
 
     def user_params
         params.require(:user).permit(:name, :password, :username)
