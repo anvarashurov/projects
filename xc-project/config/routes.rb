@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   # get 'superheroes', to: 'superheroes#index'
   # or convention:
 
-  resources :users
+  root to: redirect('/users/show')
 
-  resource :session
+  resources :users, only: [:new, :show, :create, :destroy]
 
+  resource :session, only: [:new, :create, :destroy]
+  
 end
